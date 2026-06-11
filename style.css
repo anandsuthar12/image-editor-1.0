@@ -1,0 +1,382 @@
+/* CSS Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition:all 0.2s linear;
+  user-select: none;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  padding: var(--padding-2xl);
+  /* background-color:var(--bg-color); */
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+
+  column-gap: var(--gutter-md);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.left {
+  flex: 0 0 65%;
+  min-width: 320px;
+  max-width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-sm);
+}
+
+.top {
+  width: 100%;
+  height: 80px;
+  /* background-color:rgb(0, 0, 0); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gutter-3xl);
+}
+
+.btn {
+  padding: var(--padding-md) var(--padding-lg);
+  outline: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--font-color);
+  font-size: var(--font-md);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.btn:active {
+  scale: 0.95;
+  opacity: 80%;
+}
+
+#reset-btn {
+  background-color: var(--danger-color);
+  /* margin-left:var(--margin-3xl); */
+}
+
+#download-btn {
+  background-color: var(--success-color);
+}
+
+label {
+  font-size: var(--font-lg);
+  text-transform: capitalize;
+  cursor: pointer;
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom {
+  width: 100%;
+  background-color: var(--secondary-color);
+  padding: var(--padding-md);
+  flex-grow: 1;
+  /* aspect-ratio:3/2;   it means that as width our element have , will be assigned to height as well */
+  position: relative;
+  border-radius: var(--radius-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+}
+
+#canvas{
+  /* filter: brightness(200%) ; */
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+.imgoverlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--padding-md);
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: var(--radius-sm);
+
+  background: rgba(156, 140, 138, 0.434);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.imgoverlay > .img-icon {
+  font-size: var(--font-3xl);
+}
+
+.imgoverlay > h3 {
+  font-size: var(--font-lg);
+  text-transform: capitalize;
+  font-weight: lighter;
+}
+
+.right {
+  flex: 0 0 30%;
+  min-width: 280px;
+  max-width: 35%;
+  background-color: var(--secondary-color);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--gutter-md);
+  align-items: center;
+  padding: var(--padding-sm);
+
+}
+
+.rightbox-head {
+  margin-bottom: var(--margin-md);
+  text-transform: capitalize;
+}
+
+.filters {
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex-grow: 1;
+
+  row-gap:10px;
+
+  /* overflow:scroll; */
+}
+
+.filter {
+  width: 100%;
+  height: auto;
+}
+
+.filter > p {
+  font-size: var(--font-md);
+  text-transform: capitalize;
+  margin-bottom:3px;
+}
+
+.filter-prop {
+  appearance: none;
+  width: 100%;
+  outline: none;
+  /* margin-bottom:var(--margin-lg); */
+}
+
+.filter-prop::-webkit-slider-runnable-track {
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.filter-prop::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+
+  background:wheat;
+  /* border: 2px solid var(--danger-color); */
+
+
+  
+  margin-top: -4.5px;
+  cursor: pointer;
+}
+
+.preset-box{
+  margin-top:var(--margin-sm);
+  width: 100%;
+  height:auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap:var(--gutter-md);
+}
+
+.preset{
+  /* background-color: red; */
+  width:100%;
+  height:fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:var(--gutter-sm);
+  justify-content: start;
+}
+
+.preset > button{
+  color:var(--font-color);
+  background-color:var(--secondary-color);
+  outline: none;
+  border: 1px solid var(--font-color);
+  border-radius:var(--radius-sm);
+  cursor: pointer;
+  padding:var(--padding-sm) var(--padding-md);
+}
+
+.preset > button:active{
+  scale:0.95;
+  opacity:0.5;
+}
+
+
+/* media queries for responsiveness */
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+    padding: var(--padding-lg);
+    gap: var(--gutter-lg);
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    min-width: auto;
+    max-width: 100%;
+  }
+
+  .top {
+    flex-wrap: wrap;
+    height: auto;
+    gap: var(--gutter-md);
+    padding: var(--padding-sm) 0;
+    width: 100%;
+  }
+
+  .bottom {
+    padding: var(--padding-sm);
+    min-height: 320px;
+  }
+
+  .right {
+    overflow:scroll;
+  }
+}
+
+@media (max-width: 720px) {
+  main {
+    padding: var(--padding-md);
+    gap: var(--gutter-sm);
+  }
+
+  .top {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  label {
+    font-size: 0.95rem;
+  }
+
+  .right {
+    padding: var(--padding-sm);
+  }
+
+  .bottom {
+    max-height: 60vh;
+  }
+
+  .filters,
+  .preset-box {
+    row-gap: var(--gutter-sm);
+  }
+
+  .preset {
+    justify-content: center;
+  }
+
+  .imgoverlay {
+    width: min(90%, 360px);
+    padding: var(--padding-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: var(--padding-sm);
+  }
+
+  .top {
+    flex-direction: column;
+    gap: var(--gutter-sm);
+  }
+
+  .btn,
+  .preset > button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .filter > p {
+    font-size: 0.9rem;
+  }
+
+  .filter-prop {
+    width: 100%;
+  }
+
+  .preset {
+    justify-content: stretch;
+  }
+
+  .bottom {
+    max-height: none;
+  }
+}

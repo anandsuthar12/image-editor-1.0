@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image editor 1.0</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <main>
+        <div class="left">
+            <div class="top">
+                <button class="btn" id="label-btn">
+                    <label for="chooseImg" id="choose-label">choose image</label>
+                    <input type="file" id="chooseImg" hidden>
+                </button>
+
+                <button class="btn" id="reset-btn">reset</button>
+                <button class="btn" id="download-btn">download</button>
+            </div>
+            <div class="bottom">
+                <div class="imgoverlay">
+                    <i class="ri-image-line img-icon"></i>
+                    <h3>no image choosen</h3>
+                </div>
+
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2 class="rightbox-head">filters</h2>
+
+            <div class="filters"></div>
+
+            <div class="preset-box">
+                <h2 class="rightbox-head">presets</h2>
+
+                <div class="preset"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- script file  -->
+     <script src="script.js"></script>
+</body>
+
+</html>
